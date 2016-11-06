@@ -1,0 +1,3 @@
+INSERT INTO burgers VALUES (DEFAULT, "Kimchi Burger", DEFAULT, DEFAULT),
+(DEFAULT, "Recursion Burger", DEFAULT, DEFAULT),
+(DEFAULT, "NOM NOM Burger", DEFAULT, DEFAULT);

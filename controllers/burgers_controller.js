@@ -22,7 +22,6 @@ router.route("/:burger")
 			break;
 			case "eatBurger":
 			burger.eatBurger(req.body.id, res, function(res, data) {
-				console.log(data);
 				res.json(data);
 			});
 			break;

@@ -4,9 +4,8 @@
   	  done(function(data) {
   	  	console.log(data);
   	  	$.each(data, function(index, value) {
-  	  		// console.log(typeof value.devoured);
   	  		if(value.devoured === 1) {
-			  	$("#burgers-devoured").append("<div class='row'><div class='chip col offset-s6 offset-m6'><img src='/images/burger.png' alt='burger'/>"+value.burger_name);
+			  	$("#burgers-devoured").append("<div class='row burger'><div class='chip col offset-s6 offset-m6'><img src='/images/burger.png' alt='burger'/>"+value.burger_name);
   	  		}
   	  	});
   	  });
@@ -29,7 +28,7 @@
 	  	$.post("/eatBurger", chip).
 	  	done(function(data) {
 	  	});
-	  	$("#burgers-devoured").append("<div class='row'><div class='chip col offset-s6 offset-m6'><img src='"+chip.image+"' alt='burger'/>"+chip.tag);
+	  	$("#burgers-devoured").append("<div class='row burger'><div class='chip col offset-s6 offset-m6'><img src='"+chip.image+"' alt='burger'/>"+chip.tag);
 	  });
 
 	  // select chip event doesn't seem to work?

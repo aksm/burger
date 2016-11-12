@@ -17,7 +17,6 @@ var query = {
 	insertOne: function(burger, cb) {
 		connection.query("INSERT INTO burgers SET ?", {burger_name: burger},function(err, result) {
 			if(err) throw err;
-			// console.log(result.insertId);
 			cb(result.insertId);
 		});
 	},

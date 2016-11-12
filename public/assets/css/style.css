@@ -19,10 +19,12 @@ nav.row{
   background-image: url("/images/stomach1.png");
   background-size: 100%;
   background-repeat: no-repeat;
-  /*width: 400px;*/
-  height: 600px;
+  height: 1500px;
+  padding-top: 30%;
 }
-
+.burger {
+  margin: 0;
+}
 .icon-block {
   padding: 0 15px;
 }

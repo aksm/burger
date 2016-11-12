@@ -17,6 +17,4 @@ var burger = {
 		});
 	}
 };
-// burger.addBurger("Dang Burger");
-// burger.getAll();
 module.exports = burger;

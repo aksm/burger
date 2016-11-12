@@ -4,8 +4,8 @@ var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
 var app = express();
 var path = require("path");
-var dotenv = require("dotenv");
-dotenv.load();
+// var dotenv = require("dotenv");
+// dotenv.load();
 
 // Set port
 app.set("port", process.env.PORT || 8080);

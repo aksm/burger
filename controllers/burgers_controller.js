@@ -5,14 +5,9 @@ var parseUrlencoded = bodyParser.urlencoded({extended: false});
 var burger = require("../models/burger.js");
 var path = require("path");
 
+// Router for adding and eating burgers
 router.route("/:burger")
-	.get(function(req, res) {
-		if(req.params.burger == "getBurgers") {
-			burger.getBurgers(res, function(res, data) {
-				res.json(data);
-			});
-		}
-	})
+	// Route to add and devour burgers
 	.post(parseUrlencoded, function(req, res) {
 		switch(req.params.burger) {
 			case "addBurger":
@@ -29,4 +24,14 @@ router.route("/:burger")
 			console.log("WTF went wrong?");
 		}
 	});
-module.exports = router;
+
+// Object to export router for server and getBurgers function for handlebars
+var burgers = {
+	allBurgers: function(res, cb) {
+		burger.getBurgers(res, function(res, data) {
+			cb(res, data);
+		});
+	},
+	routes: router
+};
+module.exports = burgers;

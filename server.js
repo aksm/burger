@@ -17,14 +17,17 @@ app.use("/js",express.static(__dirname + "/public/assets/js"));
 app.use("/images",express.static(__dirname + "/public/assets/images"));
 
 // Import routing
-var router = require("./controllers/burgers_controller");
-app.use("/", router);
+var burgers = require("./controllers/burgers_controller.js");
+app.use("/", burgers.routes);
 
 // Set handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.get("/", function(req, res) {
-	res.render("index");
+	// Get all burgers from DB and pass to handlebars
+	burgers.allBurgers(res, function(res, data) {
+		res.render("index", {"burger": data});
+	});
 });
 
 

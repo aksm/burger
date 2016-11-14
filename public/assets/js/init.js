@@ -1,19 +1,10 @@
 (function($){
   $(function(){
-  	  // Get all burgers
-  	  $.get("/getBurgers").
-  	  done(function(data) {
-  	  	$.each(data, function(index, value) {
-  	  		if(value.devoured === 1) {
-			  	$("#burgers-devoured").append("<div class='row burger'><div class='chip col offset-s6 offset-m6'><img src='/images/burger.png' alt='burger'/>"+value.burger_name);
-  	  		}
-  	  	});
-  	  });
 
   	  // Materialize chip listeners
 	  $('.chips-placeholder').material_chip({
 	    placeholder: '+Burger',
-	    secondaryPlaceholder: 'Prepare a Burger (Enter a burger you want)'
+	    secondaryPlaceholder: 'Prepare Burger'
 	  });
 	  // Add user-input burgers
 	  $('.chips-placeholder').on('chip.add', function(e, chip){

@@ -12,7 +12,17 @@
   <div class="row" id="stomach">
   	<div class="col s12 m12" id="burgers">
   		<div class="col s12 m12" id="burgers-devoured">
-		  </div>
+  			{{#each burger}}
+	  			{{#if this.devoured}}
+		  			<div class="row burger">
+		  				<div class="chip col offset-s6 offset-m6">
+		  					<img src="/images/burger.png" alt="burger">
+		  					{{this.burger_name}}
+		  				</div>
+		  			</div>
+	  			{{/if}}
+  			{{/each}}
+		</div>
 	</div>
   </div>
 </div>
